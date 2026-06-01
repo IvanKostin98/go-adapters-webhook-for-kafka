@@ -1,0 +1,19 @@
+# Local configuration (copy from config.yaml.example)
+config.yaml
+.env
+
+# Build artifacts
+app
+app.exe
+*.exe
+
+# Logs
+logs/
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+kafka:
+  brokers: "localhost:9092"
+  sasl_username: "your-kafka-username"
+  sasl_password: "your-kafka-password"
+
+server:
+  port: "8001"
+
+url_mapping:
+  "/kaiten/": "kaiten_default"
+  "/kaiten/npd": "kaiten_npd"
+  "/kaiten/npd_test": "kaiten_npd_test"
+  "/kaiten/hr": "kaiten_hr"
+  "/kaiten/hr_test": "kaiten_hr_test"
+  "/kaiten/test": "kaiten_test"
+  "/yandex/": "yandex_default"
+  "/yandex/hr": "yandex_hr"
+  "/yandex/test": "yandex_test"
+  "/ritm/": "ritm_default"
+  "/get/ritm/feedback": "ritm_feedback"

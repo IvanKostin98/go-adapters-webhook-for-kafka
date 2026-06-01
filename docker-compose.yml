@@ -1,0 +1,23 @@
+services:
+  webhook-kafka-adapter:
+    build: .
+    container_name: webhook-kafka-adapter
+    restart: unless-stopped
+    environment:
+      - PORT=8001
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./templates:/app/templates:ro
+      - ./logs:/app/logs
+    networks:
+      - web-out
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  web-out:
+    external: true
